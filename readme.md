@@ -29,31 +29,34 @@ This project is a RESTful API built with Node.js, Express, and MongoDB to manage
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/GarunJad/API_creation.git
    cd API_creation
-
+```
 
 Install the required Node.js dependencies:
 
-bash
+```bash
 Copy code
 npm install
+```
 Start the Server
 Make sure your MongoDB server is running.
 
 Start the Node.js server:
 
-bash
+```bash
 Copy code
 node index.js
+```
 The server will start on port 4000 by default. You should see the message:
 
-arduino
-Copy code
+```bash
+
 Server running on http://localhost:4000
+```
 API Endpoints
-1. GET /api/v3/app/events
+1. **GET /api/v3/app/events**
 Description: Fetch events by specific query parameters.
 
 Query Parameters:
@@ -67,14 +70,15 @@ Example:
 bash
 Copy code
 GET http://localhost:4000/api/v3/app/events?id=12345&type=latest&limit=5&page=1
-2. POST /api/v3/app/events
+
+2. **POST /api/v3/app/events**
 Description: Create a new event.
 
 Request Body: JSON object containing event details and an optional file.
 
 Example:
 
-json
+```json
 Copy code
 {
   "name": "Sample Event",
@@ -88,32 +92,34 @@ Copy code
   "rigor_rank": 5,
   "attendees": ["John", "Jane"]
 }
-3. PUT /api/v3/app/events/:id
+```
+3. **PUT /api/v3/app/events/:id**
 Description: Update an existing event by ID.
 
 Request Body: Same as POST /api/v3/app/events, but includes the id in the URL.
 
 Example:
 
-bash
+```bash
 Copy code
 PUT http://localhost:4000/api/v3/app/events/12345
+```
 4. DELETE /api/v3/app/events/:id
 Description: Delete an event by ID.
 
 Example:
 
-bash
-Copy code
+```bash
 DELETE http://localhost:4000/api/v3/app/events/12345
-File Uploads
+```
+
+**File Uploads**
+
 Multer is used for handling file uploads. All uploaded files are saved in the uploads/ directory. You can upload files by including a file field in the request body when creating or updating events.
 
-Folder Structure
+**Folder Structure**
+
 uploads/: Folder where uploaded files are stored.
 index.js: Main file for the API server.
 node_modules/: Folder where Node.js modules are installed.
 package.json: Defines the project dependencies and scripts.
-Troubleshooting
-1. Multer Error - Unexpected field:
-This error occurs when the field name in the form doesn't match the field defined in upload.single('file'). Ensure that the field name in the request matches 'file' or adjust it accordingly.
