@@ -33,7 +33,7 @@ This project is a RESTful API built with Node.js, Express, and MongoDB to manage
    git clone https://github.com/GarunJad/API_creation.git
    
 ```
-cd API_creation
+
 ----
 Install the required Node.js dependencies:
 
