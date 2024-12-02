@@ -24,20 +24,21 @@ This project is a RESTful API built with Node.js, Express, and MongoDB to manage
 
 - Install [Node.js](https://nodejs.org/)
 - Install [MongoDB](https://www.mongodb.com/try/download/community) and make sure it's running
-
+----
 ### Install Dependencies
 
 1. Clone the repository:
 
 ```bash
    git clone https://github.com/GarunJad/API_creation.git
-   cd API_creation
+   
 ```
-
+cd API_creation
+----
 Install the required Node.js dependencies:
 
 ```bash
-Copy code
+
 npm install
 ```
 Start the Server
@@ -46,7 +47,7 @@ Make sure your MongoDB server is running.
 Start the Node.js server:
 
 ```bash
-Copy code
+
 node index.js
 ```
 The server will start on port 4000 by default. You should see the message:
@@ -67,9 +68,10 @@ limit: Number of events to return.
 page: Page number for pagination.
 Example:
 
-bash
-Copy code
+```bash
+
 GET http://localhost:4000/api/v3/app/events?id=12345&type=latest&limit=5&page=1
+```
 
 2. **POST /api/v3/app/events**
 Description: Create a new event.
@@ -79,7 +81,6 @@ Request Body: JSON object containing event details and an optional file.
 Example:
 
 ```json
-Copy code
 {
   "name": "Sample Event",
   "files": "sample.jpg",
@@ -101,7 +102,6 @@ Request Body: Same as POST /api/v3/app/events, but includes the id in the URL.
 Example:
 
 ```bash
-Copy code
 PUT http://localhost:4000/api/v3/app/events/12345
 ```
 4. DELETE /api/v3/app/events/:id
